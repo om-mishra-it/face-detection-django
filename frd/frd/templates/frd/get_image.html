@@ -1,0 +1,18 @@
+{% extends 'frd/base.html' %}
+{% block container %}
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6">
+            <fieldset class="border p-2" style="margin-top: 30px !important;">
+                <legend class="w-auto">Upload an image:</legend>
+                <form method="POST" enctype="multipart/form-data" class="form-example" onsubmit="">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" value="Submit" class="btn btn-primary btn-customized">
+                    <a href="{% url 'output' %}">Output</a>
+                </form>
+            </fieldset>
+        </div>
+    </div>
+</div>
+{% endblock %}
